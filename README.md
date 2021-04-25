@@ -2,7 +2,7 @@
 
 ## How use
 
-Try following requests to this url : https://theogalode.zapto.org/api/
+Try following requests on postman with this url : https://theogalode.zapto.org/api
   - /recipes
     - GET: Get all recipes
     - POST: Add a new recipe
