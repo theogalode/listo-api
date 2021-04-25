@@ -19,7 +19,7 @@ Try following requests on postman with this url : https://theogalode.zapto.org/a
       ```json
       body exemple: 
       {
-        "username": "fooname", # or use "email": "fooname@hotmail.com" 
+        "username": "fooname", 
         "password": "mdpFooname"
       }
       ```
