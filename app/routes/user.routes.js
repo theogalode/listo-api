@@ -10,7 +10,11 @@ module.exports = function(app) {
     next();
   });
 
-  app.get("/api/test/all", controller.allAccess);
+  app.get("/api/users", [authJwt.verifyToken, authJwt.isAdmin], controller.getAllUsers);
+  app.get("/api/users/:id", [authJwt.verifyToken, authJwt.isAdmin], controller.getUserById);
+
+  // TESTS
+/*   app.get("/api/test/all", controller.allAccess);
 
   app.get(
     "/api/test/user",
@@ -34,5 +38,5 @@ module.exports = function(app) {
     "/api/test/pro",
     [authJwt.verifyToken, authJwt.isPro],
     controller.proBoard
-  );
+  ); */
 };

@@ -1,7 +1,7 @@
 module.exports = {
-  HOST: "theogalode.zapto.org",
-  USER: "listoDev",
-  PASSWORD: "ag6Z738BFz7pR3ZN78Cm5qzJb",
+  HOST: process.env.DB_HOST,
+  USER: process.env.DB_USERNAME_DEV,
+  PASSWORD: process.env.DB_PASSWORD_DEV,
   DB: "listo_sequelize",
   dialect: "postgres",
   pool: {

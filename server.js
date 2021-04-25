@@ -1,9 +1,12 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const morgan = require('morgan')
+const morgan = require('morgan');
+const dotenv = require('dotenv');
 
 const app = express();
+
+dotenv.config({ path: './config.env' });
 
 var corsOptions = {
   origin: "http://localhost:8080/api"
@@ -14,7 +17,7 @@ app.use(morgan('combined'));
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
- 
+
 // parse application/json
 app.use(bodyParser.json());
 
@@ -31,12 +34,12 @@ function initial() {
     id: 1,
     name: "user"
   });
- 
+
   Role.create({
     id: 2,
     name: "moderator"
   });
- 
+
   Role.create({
     id: 3,
     name: "admin"
@@ -50,12 +53,13 @@ function initial() {
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to listo application." });
+  res.json({ message: "Welcome to the Recipe Manager API !" });
 });
 
 // routes
 require('./app/routes/auth.routes')(app);
 require('./app/routes/user.routes')(app);
+require('./app/routes/recipe.routes')(app); 
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
