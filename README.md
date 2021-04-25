@@ -1,6 +1,6 @@
 # Recipe Manager API
 
-## How use
+## Let's try my API
 
 Try following requests on postman with this url : https://theogalode.zapto.org/api
   - /auth/signup
@@ -19,7 +19,7 @@ Try following requests on postman with this url : https://theogalode.zapto.org/a
       ```json
       body exemple: 
       {
-        "username": "fooname", //or "email": "fooname@hotmail.com" 
+        "username": "fooname", # or use "email": "fooname@hotmail.com" 
         "password": "mdpFooname"
       }
       ```
